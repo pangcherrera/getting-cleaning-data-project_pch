@@ -1,0 +1,34 @@
+Code Book
+
+1. Merge the training and the test sets to create one data set.
+
+The dataset read into tables the data located in the following: features.txt, activity_labels.txt, subject_train.txt, x_train.txt, y_train.txt
+subject_test.txt, x_test.txt, y_test.txt
+
+I then assign column names and merge to create one data set.
+  Training Set:
+  colnames(activityType)  = c('activityId','activityType');
+  colnames(subjectTrain)  = "subjectId";
+  colnames(xTrain)        = features[,2]; 
+  colnames(yTrain)        = "activityId";
+
+  Test Set:
+  colnames(subjectTest) = "subjectId";
+  colnames(xTest)       = features[,2]; 
+  colnames(yTest)       = "activityId";
+
+2. Extract only the measurements on the mean and standard deviation for each measurement.
+
+Create a logcal vector that contains TRUE values for the ID, mean and stdev columns and FALSE values for the others. Subset this data to keep only the necessary columns.
+
+3. Use descriptive activity names to name the activities in the data set
+
+Merge data subset with the activityType table to cinlude the descriptive activity names
+
+4. Appropriately label the data set with descriptive activity names.
+
+Use gsub function for pattern replacement to clean up the data labels.
+
+5. Create a second, independent tidy data set with the average of each variable for each activity and each subject.
+
+Per the project instructions, we need to produce only a data set with the average of each veriable for each activity and subject
